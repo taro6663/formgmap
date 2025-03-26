@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg932\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="ja">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>\uc0\u12450 \u12531 \u12465 \u12540 \u12488 </title>\
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">\
+    <style>\
+        body \{\
+            padding: 20px;\
+        \}\
+        .star-rating \{\
+            display: flex;\
+            flex-direction: row-reverse;\
+            justify-content: left;\
+        \}\
+        .star-rating input \{\
+            display: none;\
+        \}\
+        .star-rating label \{\
+            font-size: 2rem;\
+            color: #ccc;\
+            cursor: pointer;\
+        \}\
+        .star-rating label:hover,\
+        .star-rating label:hover ~ label,\
+        .star-rating input:checked ~ label \{\
+            color: #ffc107;\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <div class="container">\
+        <h1>\uc0\u12450 \u12531 \u12465 \u12540 \u12488 </h1>\
+        <form id="surveyForm">\
+            <div class="mb-3">\
+                <label for="penName" class="form-label">\uc0\u12506 \u12531 \u12493 \u12540 \u12512 </label>\
+                <input type="text" class="form-control" id="penName" name="penName" required>\
+            </div>\
+            <div class="mb-3">\
+                <label class="form-label">\uc0\u24615 \u21029 </label><br>\
+                <div class="form-check form-check-inline">\
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="\uc0\u30007 \u24615 " required>\
+                    <label class="form-check-label" for="male">\uc0\u30007 \u24615 </label>\
+                </div>\
+                <div class="form-check form-check-inline">\
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="\uc0\u22899 \u24615 " required>\
+                    <label class="form-check-label" for="female">\uc0\u22899 \u24615 </label>\
+                </div>\
+                <div class="form-check form-check-inline">\
+                    <input class="form-check-input" type="radio" name="gender" id="other" value="\uc0\u12381 \u12398 \u20182 " required>\
+                    <label class="form-check-label" for="other">\uc0\u12381 \u12398 \u20182 </label>\
+                </div>\
+            </div>\
+            <div class="mb-3">\
+                <label class="form-label">\uc0\u39135 \u20107 \u12399 \u12356 \u12363 \u12364 \u12391 \u12375 \u12383 \u12363 \u65311 </label><br>\
+                <div class="star-rating">\
+                    <input type="radio" id="star5_meal" name="mealRating" value="5"><label for="star5_meal">\uc0\u9733 </label>\
+                    <input type="radio" id="star4_meal" name="mealRating" value="4"><label for="star4_meal">\uc0\u9733 </label>\
+                    <input type="radio" id="star3_meal" name="mealRating" value="3"><label for="star3_meal">\uc0\u9733 </label>\
+                    <input type="radio" id="star2_meal" name="mealRating" value="2"><label for="star2_meal">\uc0\u9733 </label>\
+                    <input type="radio" id="star1_meal" name="mealRating" value="1"><label for="star1_meal">\uc0\u9733 </label>\
+                </div>\
+            </div>\
+             <div class="mb-3">\
+                <label class="form-label">\uc0\u12469 \u12540 \u12499 \u12473 \u12399 \u12356 \u12363 \u12364 \u12391 \u12375 \u12383 \u12363 \u65311 </label><br>\
+                <div class="star-rating">\
+                    <input type="radio" id="star5_service" name="serviceRating" value="5"><label for="star5_service">\uc0\u9733 </label>\
+                    <input type="radio" id="star4_service" name="serviceRating" value="4"><label for="star4_service">\uc0\u9733 </label>\
+                    <input type="radio" id="star3_service" name="serviceRating" value="3"><label for="star3_service">\uc0\u9733 </label>\
+                    <input type="radio" id="star2_service" name="serviceRating" value="2"><label for="star2_service">\uc0\u9733 </label>\
+                    <input type="radio" id="star1_service" name="serviceRating" value="1"><label for="star1_service">\uc0\u9733 </label>\
+                </div>\
+            </div>\
+             <div class="mb-3">\
+                <label class="form-label">\uc0\u38640 \u22258 \u27671 \u12399 \u12356 \u12363 \u12364 \u12391 \u12375 \u12383 \u12363 \u65311 </label><br>\
+                <div class="star-rating">\
+                    <input type="radio" id="star5_atmosphere" name="atmosphereRating" value="5"><label for="star5_atmosphere">\uc0\u9733 </label>\
+                    <input type="radio" id="star4_atmosphere" name="atmosphereRating" value="4"><label for="star4_atmosphere">\uc0\u9733 </label>\
+                    <input type="radio" id="star3_atmosphere" name="atmosphereRating" value="3"><label for="star3_atmosphere">\uc0\u9733 </label>\
+                    <input type="radio" id="star2_atmosphere" name="atmosphereRating" value="2"><label for="star2_atmosphere">\uc0\u9733 </label>\
+                    <input type="radio" id="star1_atmosphere" name="atmosphereRating" value="1"><label for="star1_atmosphere">\uc0\u9733 </label>\
+                </div>\
+            </div>\
+            <div class="mb-3">\
+                <label class="form-label">\uc0\u20840 \u20307 \u12434 \u36890 \u12375 \u12390 \u12356 \u12363 \u12364 \u12391 \u12375 \u12383 \u12363 \u65311 </label><br>\
+                <div class="star-rating">\
+                    <input type="radio" id="star5_overall" name="overallRating" value="5"><label for="star5_overall">\uc0\u9733 </label>\
+                    <input type="radio" id="star4_overall" name="overallRating" value="4"><label for="star4_overall">\uc0\u9733 </label>\
+                    <input type="radio" id="star3_overall" name="overallRating" value="3"><label for="star3_overall">\uc0\u9733 </label>\
+                    <input type="radio" id="star2_overall" name="overallRating" value="2"><label for="star2_overall">\uc0\u9733 </label>\
+                    <input type="radio" id="star1_overall" name="overallRating" value="1"><label for="star1_overall">\uc0\u9733 </label>\
+                </div>\
+            </div>\
+            <button type="submit" class="btn btn-primary">\uc0\u36865 \u20449 </button>\
+        </form>\
+        <div id="thankYou" style="display: none;">\
+            <h2>\uc0\u22238 \u31572 \u12354 \u12426 \u12364 \u12392 \u12358 \u12372 \u12374 \u12356 \u12414 \u12375 \u12383 \u12290 </h2>\
+        </div>\
+        <div id="feedback" style="display: none;">\
+            <h2>\uc0\u24863 \u24819 \u12434 \u12372 \u35352 \u20837 \u12367 \u12384 \u12373 \u12356 \u12290 </h2>\
+            <textarea id="feedbackText" class="form-control" rows="3"></textarea>\
+            <button id="copyButton" class="btn btn-secondary mt-2">\uc0\u12467 \u12500 \u12540 </button>\
+            <a id="googleMapsLink" href="#" class="btn btn-success mt-2" target="_blank">Google\uc0\u12510 \u12483 \u12503 \u12391 \u21475 \u12467 \u12511 \u12434 \u26360 \u12367 </a>\
+        </div>\
+    </div>\
+\
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>\
+    <script>\
+        document.getElementById('surveyForm').addEventListener('submit', function(event) \{\
+            event.preventDefault();\
+\
+            const mealRating = document.querySelector('input[name="mealRating"]:checked');\
+            const serviceRating = document.querySelector('input[name="serviceRating"]:checked');\
+            const atmosphereRating = document.querySelector('input[name="atmosphereRating"]:checked');\
+            const overallRating = document.querySelector('input[name="overallRating"]:checked');\
+\
+            const ratings = [mealRating, serviceRating, atmosphereRating, overallRating].map(rating => parseInt(rating.value));\
+            const averageRating = ratings.reduce((a, b) => a + b, 0) / ratings.length;\
+\
+            document.getElementById('surveyForm').style.display = 'none';\
+\
+            if (averageRating >= 4) \{\
+                document.getElementById('feedback').style.display = 'block';\
+                document.getElementById('googleMapsLink').href = 'https://g.co/kgs/VyrTJg1'; // Google\uc0\u12510 \u12483 \u12503 \u12398 \u12522 \u12531 \u12463 \u12434 \u25407 \u20837 \
+                document.getElementById('copyButton').addEventListener('click', function() \{\
+                    const feedbackText = document.}
