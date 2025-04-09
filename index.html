@@ -1,0 +1,191 @@
+{\rtf1\ansi\ansicpg932\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="ja">\
+<head>\
+  <meta charset="UTF-8" />\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\
+  <title>\uc0\u12304 JIMO REPORT\u12305 \u12450 \u12531 \u12465 \u12540 \u12488 \u12501 \u12457 \u12540 \u12512 </title>\
+  <script src="https://cdn.tailwindcss.com"></script>\
+  <style>\
+    .star \{\
+      cursor: pointer;\
+      fill: #d1d5db;\
+    \}\
+    .star.selected,\
+    .star:hover,\
+    .star:hover ~ .star \{\
+      fill: #facc15;\
+    \}\
+  </style>\
+</head>\
+<body class="bg-gray-100 text-gray-900 p-6">\
+  <div class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg">\
+    <h1 class="text-2xl font-bold mb-4">\uc0\u12304 JIMO REPORT\u12305 \u12371 \u12371 \u12395 \u24215 \u21517 \u12364 \u20837 \u12426 \u12414 \u12377  / \u12450 \u12531 \u12465 \u12540 \u12488 </h1>\
+    <p class="mb-6 text-sm">\uc0\u12450 \u12463 \u12475 \u12473 \u65306 \u20303 \u25152 <br />JR\u9675 \u9675 \u39365  \u12363 \u12425  \u24466 \u27497 \u9675 \u20998 </p>\
+\
+    <form id="formSection" class="space-y-6">\
+      <script>\
+        function renderStars(name) \{\
+          let container = document.createElement('div');\
+          container.className = 'flex gap-1 mt-2';\
+          for (let i = 1; i <= 5; i++) \{\
+            let star = document.createElement('svg');\
+            star.setAttribute('xmlns', 'http://www.w3.org/2000/svg');\
+            star.setAttribute('viewBox', '0 0 24 24');\
+            star.setAttribute('class', 'w-6 h-6 star');\
+            star.innerHTML = '<path d="M12 .587l3.668 7.568L24 9.423l-6 5.848 1.417 8.229L12 18.897l-7.417 4.603L6 15.271 0 9.423l8.332-1.268z"/>';\
+            star.addEventListener('click', () => \{\
+              document.querySelectorAll(`[name='$\{name\}']`).forEach((r, idx) => \{\
+                r.checked = (idx < i);\
+              \});\
+              Array.from(container.children).forEach((s, idx) => \{\
+                s.classList.toggle('selected', idx < i);\
+              \});\
+            \});\
+            container.appendChild(star);\
+          \}\
+          return container;\
+        \}\
+\
+        document.addEventListener('DOMContentLoaded', () => \{\
+          ['overall', 'meal', 'atmosphere', 'service'].forEach(name => \{\
+            let wrapper = document.getElementById(name + '-stars');\
+            if (wrapper) \{\
+              wrapper.appendChild(renderStars(name));\
+            \}\
+          \});\
+\
+          const reasonButtons = document.querySelectorAll('.reason-button');\
+          reasonButtons.forEach(btn => \{\
+            btn.addEventListener('click', () => \{\
+              reasonButtons.forEach(b => b.classList.remove('bg-blue-500', 'text-white'));\
+              reasonButtons.forEach(b => b.classList.add('bg-gray-200', 'text-gray-800'));\
+              btn.classList.remove('bg-gray-200', 'text-gray-800');\
+              btn.classList.add('bg-blue-500', 'text-white');\
+              document.getElementById('reasonInput').value = btn.textContent;\
+            \});\
+          \});\
+        \});\
+      </script>\
+\
+      <!-- \uc0\u26143 \u35413 \u20385 \u38917 \u30446  -->\
+      <div>\
+        <label class="font-semibold">\uc0\u20840 \u20307 \u12434 \u36890 \u12375 \u12390 \u12356 \u12363 \u12364 \u12391 \u12375 \u12383 \u12363 \u65311 </label>\
+        <div id="overall-stars"></div>\
+        <div class="hidden">\
+          <input type="radio" name="overall" value="1">\
+          <input type="radio" name="overall" value="2">\
+          <input type="radio" name="overall" value="3">\
+          <input type="radio" name="overall" value="4">\
+          <input type="radio" name="overall" value="5">\
+        </div>\
+      </div>\
+\
+      <!-- \uc0\u26085 \u20184 \u36984 \u25246  -->\
+      <div>\
+        <label class="font-semibold">\uc0\u21442 \u21152 \u12375 \u12383 \u26085 \u12434 \u25945 \u12360 \u12390 \u12367 \u12384 \u12373 \u12356 </label>\
+        <input type="date" name="visitDate" class="border w-full p-2 rounded" required>\
+      </div>\
+\
+      <!-- \uc0\u24615 \u21029  -->\
+      <div>\
+        <label class="font-semibold">\uc0\u24615 \u21029 </label>\
+        <select id="genderSelect" class="border w-full p-2 rounded" required>\
+          <option value="" disabled selected hidden>\uc0\u36984 \u25246 \u12375 \u12390 \u12367 \u12384 \u12373 \u12356 </option>\
+          <option>\uc0\u30007 \u24615 </option>\
+          <option>\uc0\u22899 \u24615 </option>\
+          <option>\uc0\u12381 \u12398 \u20182 </option>\
+        </select>\
+      </div>\
+\
+      <!-- \uc0\u24180 \u40802 \u23652  -->\
+      <div>\
+        <label class="font-semibold">\uc0\u24180 \u40802 \u23652 </label>\
+        <select id="ageSelect" class="border w-full p-2 rounded" required>\
+          <option value="" disabled selected hidden>\uc0\u36984 \u25246 \u12375 \u12390 \u12367 \u12384 \u12373 \u12356 </option>\
+          <option>19\uc0\u27507 \u20197 \u19979 </option>\
+          <option>20\uc0\u27507 \u12316 24\u27507 </option>\
+          <option>25\uc0\u27507 \u12316 34\u27507 </option>\
+          <option>35\uc0\u27507 \u12316 44\u27507 </option>\
+          <option>45\uc0\u27507 \u12316 54\u27507 </option>\
+          <option>55\uc0\u27507 \u12316 64\u27507 </option>\
+          <option>65\uc0\u27507 \u20197 \u19978 </option>\
+        </select>\
+      </div>\
+\
+      <!-- \uc0\u26469 \u24215 \u12398 \u12365 \u12387 \u12363 \u12369  -->\
+      <div>\
+        <label class="font-semibold">\uc0\u26469 \u24215 \u12398 \u12365 \u12387 \u12363 \u12369 </label>\
+        <div class="flex gap-3 mt-2 flex-wrap">\
+          <button type="button" class="reason-button px-4 py-2 rounded-full bg-gray-200 text-gray-800 border border-gray-300">\uc0\u12472 \u12514 \u12524 \u12509  / \u24403 \u36984 \u32773 \u27096 </button>\
+          <button type="button" class="reason-button px-4 py-2 rounded-full bg-gray-200 text-gray-800 border border-gray-300">\uc0\u12362 \u36899 \u12428 \u27096 </button>\
+        </div>\
+        <input type="hidden" id="reasonInput" name="reason" />\
+      </div>\
+\
+      <!-- \uc0\u20197 \u19979 \u12289 \u26009 \u29702 \u12539 \u38640 \u22258 \u27671 \u12539 \u12469 \u12540 \u12499 \u12473  -->\
+      <div>\
+        <label class="font-semibold">\uc0\u26009 \u29702 \u12399 \u12356 \u12363 \u12364 \u12391 \u12375 \u12383 \u12363 \u65311 </label>\
+        <div id="meal-stars"></div>\
+        <div class="hidden">\
+          <input type="radio" name="meal" value="1">\
+          <input type="radio" name="meal" value="2">\
+          <input type="radio" name="meal" value="3">\
+          <input type="radio" name="meal" value="4">\
+          <input type="radio" name="meal" value="5">\
+        </div>\
+      </div>\
+\
+      <div>\
+        <label class="font-semibold">\uc0\u38640 \u22258 \u27671 \u12399 \u12356 \u12363 \u12364 \u12391 \u12375 \u12383 \u12363 \u65311 </label>\
+        <div id="atmosphere-stars"></div>\
+        <div class="hidden">\
+          <input type="radio" name="atmosphere" value="1">\
+          <input type="radio" name="atmosphere" value="2">\
+          <input type="radio" name="atmosphere" value="3">\
+          <input type="radio" name="atmosphere" value="4">\
+          <input type="radio" name="atmosphere" value="5">\
+        </div>\
+      </div>\
+\
+      <div>\
+        <label class="font-semibold">\uc0\u12469 \u12540 \u12499 \u12473 \u12399 \u12356 \u12363 \u12364 \u12391 \u12375 \u12383 \u12363 \u65311 </label>\
+        <div id="service-stars"></div>\
+        <div class="hidden">\
+          <input type="radio" name="service" value="1">\
+          <input type="radio" name="service" value="2">\
+          <input type="radio" name="service" value="3">\
+          <input type="radio" name="service" value="4">\
+          <input type="radio" name="service" value="5">\
+        </div>\
+      </div>\
+\
+      <!-- \uc0\u24863 \u24819  -->\
+      <div>\
+        <label class="font-semibold">\uc0\u12362 \u24215 \u12398 \u24863 \u24819 \u12434 \u25945 \u12360 \u12390 \u12367 \u12384 \u12373 \u12356 </label>\
+        <textarea name="comment" class="w-full border rounded p-2" rows="4" placeholder="\uc0\u20363 \u65306 \u12295 \u12295 \u12364 \u32654 \u21619 \u12375 \u12363 \u12387 \u12383 \u12289 \u38640 \u22258 \u27671 \u12364 \u33853 \u12385 \u30528 \u12356 \u12390 \u12356 \u12390 \u12522 \u12521 \u12483 \u12463 \u12473 \u12391 \u12365 \u12383 \'85\u12394 \u12393 "></textarea>\
+      </div>\
+\
+      <!-- \uc0\u12503 \u12521 \u12452 \u12496 \u12471 \u12540 \u12509 \u12522 \u12471 \u12540  -->\
+      <div class="bg-gray-100 p-4 rounded">\
+        <label class="font-semibold">\uc0\u12503 \u12521 \u12452 \u12496 \u12471 \u12540 \u12509 \u12522 \u12471 \u12540 \u12395 \u21516 \u24847 \u12377 \u12427 </label>\
+        <ul class="text-sm list-disc list-inside mb-2">\
+          <li>\uc0\u20491 \u20154 \u24773 \u22577 \u12399 \u12469 \u12540 \u12499 \u12473 \u21521 \u19978 \u20197 \u22806 \u12398 \u30446 \u30340 \u12391 \u12399 \u20351 \u29992 \u12375 \u12414 \u12379 \u12435 </li>\
+          <li>\uc0\u21516 \u24847 \u12394 \u12375 \u12395 \u31532 \u19977 \u32773 \u12408 \u25552 \u20379 \u12377 \u12427 \u12371 \u12392 \u12399 \u12354 \u12426 \u12414 \u12379 \u12435 </li>\
+          <li>\uc0\u29305 \u23450 \u12398 \u20491 \u20154 \u12364 \u35672 \u21029 \u12391 \u12365 \u12427 \u24773 \u22577 \u12392 \u12375 \u12390 \u12289 \u20844 \u34920 \u12373 \u12428 \u12427 \u12371 \u12392 \u12399 \u12354 \u12426 \u12414 \u12379 \u12435 </li>\
+        </ul>\
+        <label><input type="checkbox" required> \uc0\u21516 \u24847 \u12377 \u12427 </label>\
+      </div>\
+\
+      <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600">\uc0\u36865 \u20449 </button>\
+    </form>\
+  </div>\
+</body>\
+</html>\
+}
